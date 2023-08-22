@@ -1,0 +1,39 @@
+/* Analytics.css */
+
+.analytics-total-amount {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.analytics-total-amount h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.analytics-monthly {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.analytics-monthly-item {
+  flex-basis: 48%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.analytics-monthly-label {
+  font-weight: bold;
+}
+
+.analytics-monthly-count,
+.analytics-monthly-amount {
+  margin-top: 5px;
+}

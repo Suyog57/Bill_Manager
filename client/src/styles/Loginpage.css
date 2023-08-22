@@ -1,0 +1,59 @@
+.login-page {
+  height: 100vh !important;
+  width: 100vw !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: rgb(172, 172, 172);
+}
+
+.login-form {
+  background-color: #ffffff;
+  padding: 30px;
+  width: 45%;
+height: 70vh;
+margin-left: 23%;
+border-radius: 20px;
+transition: transform 0.4s;
+  transition-delay: 0.1s;
+
+}
+.login-form:hover{
+  transform: translateY(-5px);
+}
+.login-form h1 {
+  text-align: center;
+  margin: 30px;
+  color: #333;
+}
+
+.login-form .ant-form-item-label label {
+  font-size: large;
+  color: #333 !important;
+}
+.login-form button {
+  background-color: #2656ce;
+  color: white;
+  outline: none;
+}
+.login-form button:hover {
+  background-color: #0048ff;
+  color: white;
+}
+.login-form a {
+  color: #000287 !important;
+}
+
+.login-form a:hover {
+  color: black !important;
+}
+.btn{
+  width: 25%;
+  margin-left: 35%;
+  margin-top: 5%;
+}
+
+.sflexx{
+  flex-direction: column;
+}
