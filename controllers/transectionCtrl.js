@@ -4,22 +4,27 @@ const moment = require("moment");
 const getAllTransection = async (req, res) => {
   try {
     const { frequency, selectedDate, type } = req.body;
-    const transections = await transectionModel.find({
-      ...(frequency !== "custom"
-        ? {
-            date: {
-              $gt: moment().subtract(Number(frequency), "d").toDate(),
-            },
-          }
-        : {
-            date: {
-              $gte: selectedDate[0],
-              $lte: selectedDate[1],
-            },
-          }),
-      ...(type === "Paid" && { status: "paid" }),
-      ...(type === "Unpaid" && { status: "unpaid" }),
-    });
+    const query = {};
+
+    if (frequency !== "custom") {
+      query.date = {
+        $gt: moment().subtract(Number(frequency), "d").toDate(),
+      };
+    } else {
+      query.date = {
+        $gte: selectedDate[0],
+        $lte: selectedDate[1],
+      };
+    }
+
+    if (type === "Paid") {
+      query.status = "paid";
+    } else if (type === "Unpaid") {
+      query.status = "unpaid";
+    }
+
+    const transections = await transectionModel.find(query);
+
     res.status(200).json(transections);
   } catch (error) {
     console.log(error);

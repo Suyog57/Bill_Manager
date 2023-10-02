@@ -5,7 +5,7 @@ const {
   editTransection,
   deleteTransection,
 } = require("../controllers/transectionCtrl");
-const authMiddleware = require("../middlewares/auth");
+
 //router object
 const router = express.Router();
 
