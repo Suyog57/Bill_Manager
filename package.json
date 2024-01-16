@@ -1,7 +1,7 @@
 {
-  "name": "Expanse-Management-System",
+  "name": "Bill-Manager",
   "version": "1.0.0",
-  "description": "expanse tracker app",
+  "description": "Bill Manager freelance project",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -10,7 +10,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\" "
   },
   "keywords": [],
-  "author": "Techinfoyt",
+  "author": "Suyog",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
