@@ -87,7 +87,7 @@ const HomePage = () => {
     const getAllTransactions = async () => {
       try {
         const user = JSON.parse(localStorage.getItem("user"));
-        console.log("user is :"+ JSON.stringify( user));
+        // console.log("user is :"+ JSON.stringify( user));
         // console.log({userid: user._id,
         //   frequency,
         //   selectedDate,
@@ -105,11 +105,12 @@ const HomePage = () => {
           selectedDate,
           status: type === "all" ? "" : type.toLowerCase(),
         };
-        console.log(payload);
+        // console.log(payload);
         const res = await axios.post(
           `${process.env.REACT_APP_URL}/api/v1/transections/get-transection`,
           payload
         );
+        console.log(res.data);
         setAllTransection(res.data);
         setLoading(false);
       } catch (error) {
@@ -138,7 +139,7 @@ const HomePage = () => {
 
   // form handling
   const handleSubmit = async (values) => {
-    console.log("Hande submit: "+JSON.stringify(values));
+    // console.log("Hande submit: "+JSON.stringify(values));
     try {
       const user = JSON.parse(localStorage.getItem("user"));
       console.log(user);
@@ -157,9 +158,9 @@ const HomePage = () => {
           ...values
         });
         setLoading(false);
-        console.log({
-          ...values
-        });
+        // console.log({
+        //   ...values
+        // });
         message.success("Transaction Added Successfully");
       }
       setShowModal(false);

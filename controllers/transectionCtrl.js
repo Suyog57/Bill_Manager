@@ -3,7 +3,8 @@ const moment = require("moment");
 
 const getAllTransection = async (req, res) => {
   try {
-    const { frequency, selectedDate, type } = req.body;
+
+    const { frequency, selectedDate, status } = req.body;
     const query = {};
 
     if (frequency !== "custom") {
@@ -17,9 +18,9 @@ const getAllTransection = async (req, res) => {
       };
     }
 
-    if (type === "Paid") {
+    if (status === "paid") {
       query.status = "paid";
-    } else if (type === "Unpaid") {
+    } else if (status === "unpaid") {
       query.status = "unpaid";
     }
 
